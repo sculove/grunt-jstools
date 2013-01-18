@@ -1,0 +1,18 @@
+{
+  "author": "sculove <sculove@gmail.com>",
+  "name": "grunt-jstools",
+  "version": "0.0.2",
+  "description" : "a grunts-plugin which support javascript build",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sculove/grunt-jstools.git"
+  },
+  "preferGlobal" : "true",
+  "keyword": ["grunt","jstool"],
+  "engines": {
+    "node": ""
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
