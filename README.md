@@ -1,20 +1,28 @@
 # grunt-jstools
-javascript 파일의 concat, min 을 지원하는 grunt 플러그인
 
-## Basic Usages
+The best sample grunt tasks ever.
+
+## Getting Started
+Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-jstools`
+
+Then add this line to your project's `grunt.js` gruntfile:
+
+```javascript
+grunt.loadNpmTasks('grunt-jstools');
 ```
-grunt.initConfig({
 
+[grunt]: http://gruntjs.com/
+[getting_started]: https://github.com/gruntjs/grunt/blob/master/docs/getting_started.md
 
-});
-```
+## Documentation
+_(Coming soon)_
 
-## Dependency Modules
-grunt
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
+
+## Release History
+_(Nothing yet)_
 
 ## License
-MIT License
-
-## Contact
-facebook Chan-uk Son
-mail sculove@gmail.com
+Copyright (c) 2013 sculove  
+Licensed under the MIT license.
