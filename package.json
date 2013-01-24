@@ -1,7 +1,7 @@
 {
   "name": "grunt-jstools",
-  "description": "The best sample grunt tasks ever.",
-  "version": "0.0.5",
+  "description": "support javascript merge, each compress, all in compress, each beautify, all in beautify.etc...",
+  "version": "0.0.6",
   "homepage": "https://github.com/sculove/grunt-jstools",
   "author": {
     "name": "sculove",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "uglify-js" : "*",
-    "grunt": "~0.3.17"
+	  "grunt": "~0.3.17"
   },
   "keywords": [
     "gruntplugin"
