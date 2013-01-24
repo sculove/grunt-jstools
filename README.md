@@ -36,7 +36,6 @@ grunt.initConfig({
 		level: "nocomment"
   	}
   }
-}
 });
 
 grunt.loadNpmTasks('grunt-jstools');
@@ -79,9 +78,7 @@ grunt.loadNpmTasks('grunt-jstools');
 
 ### Multiple build targets
 'grunt jstools'를 호출하면 
-
 type1이 호출되어, type1의 'src'에 입력한 패턴에 해당하는 파일을 'merge_min.js' 파일 하나로, 최소화(**min**)하여 생성되고,
-
 type2가 호출되어, type2의 'src'에 입력한 패턴에 해당하는 파일을 'output' 디렉토리 하위에 src에 입력한 파일들이 각각 코드 암복화된 상태로 생성된다.
 
 
@@ -110,11 +107,9 @@ grunt.loadNpmTasks('grunt-jstools');
 
 
 ## Refrenece site
-https://github.com/gruntjs/grunt/blob/0.3-stable/docs/plugins.md
-
-https://github.com/mishoo/UglifyJS2
-
-http://lisperator.net/uglifyjs/
+[https://github.com/gruntjs/grunt/blob/0.3-stable/docs/plugins.md]
+[https://github.com/mishoo/UglifyJS2]
+[http://lisperator.net/uglifyjs/]
 
 
 ## License
