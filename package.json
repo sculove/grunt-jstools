@@ -29,6 +29,7 @@
     "test": "grunt test"
   },
   "devDependencies": {
+    "uglify-js" : "*",
     "grunt": "~0.3.17"
   },
   "keywords": [
