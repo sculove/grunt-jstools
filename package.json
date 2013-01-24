@@ -1,7 +1,7 @@
 {
   "name": "grunt-jstools",
-  "description": "support javascript merge, each compress, all in compress, each beautify, all in beautify.etc...",
-  "version": "0.0.6",
+  "description": "support javascript merge, each compress, all in compress, each beautify, all in beautify, each obfuscation, all in obfuscation, etc...",
+  "version": "1.0.0",
   "homepage": "https://github.com/sculove/grunt-jstools",
   "author": {
     "name": "sculove",
