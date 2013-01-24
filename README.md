@@ -28,7 +28,7 @@ npm install grunt-jstools
 grunt.initConfig({
   // Lists of files to be concatenated.
   jstools: {
-  	작업종 : {
+  	작업종류 : {
   		// 작업대상이 될 javascript 파일 패턴
 		src: [],
 		// 결과물이 될 파일이나, 디렉토리
