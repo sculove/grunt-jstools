@@ -14,7 +14,6 @@ module.exports = function(grunt) {
 			dest : "merge_min.js",
 			level : "min"
 		},
-		//
 		task3 : {
 			src : [ "source/**/*.js", "jindo.js" ],
 			dest : "output",

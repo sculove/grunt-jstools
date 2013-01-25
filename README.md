@@ -109,7 +109,9 @@ grunt.loadNpmTasks('grunt-jstools');
 
 
 ## Release History
+- 2013. 1. 25 압축률 및 gzip 했을 경우의 변화량을 알려줌.
 - 2013. 1. 24 최초 릴리즈 v1.0.0
+
 
 
 ## Refrenece site

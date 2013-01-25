@@ -5,6 +5,7 @@
  * Copyright (c) 2013 sculove
  * Licensed under the MIT license.
  */
+// var util = require("util");
 module.exports = function(grunt) {
 	var log = grunt.log,
 		fs = grunt.file;
@@ -29,12 +30,14 @@ module.exports = function(grunt) {
 			srcFiles.map(function(srcpath) {
 				srcContents = grunt.helper("jstools-uglify", srcpath, level);
 				fs.write(dest + "/" + srcpath, srcContents);
+				grunt.helper("jstools-info", srcpath, srcContents, true);
 			});
 			log.writeln('Directory "' + dest + '"');
 		} else {
 	    	srcContents = grunt.helper("jstools-uglify", srcFiles, level);
 	    	fs.write(dest, srcContents);
-	    	
+	    	grunt.helper("jstools-info", srcFiles, srcContents, false);
+
 	    	// // Otherwise, print a success message.
 	    	log.writeln('File "' + dest + '" created.');
 		}
@@ -81,5 +84,20 @@ module.exports = function(grunt) {
 					break;
 			}
 		return uglifyjs.minify(afiles, htOption).code;
+	});
+
+	grunt.registerHelper("jstools-info", function(sPath, sConvertedContent, isDirType) {
+		var nAfterLen = sConvertedContent.length,
+			nGzipLen = require("gzip-js").zip(sConvertedContent, {}).length,
+			nLen = 0;
+		if(isDirType) {
+			nLen = grunt.task.directive(sPath, grunt.file.read).length;
+		} else {
+			sPath.forEach(function(value) {
+				nLen += grunt.task.directive(value, grunt.file.read).length;
+			});
+		}
+		grunt.log.writeln("[" + (isDirType ? sPath : "Information") + "] ");
+		grunt.log.writeln(" " + nLen + " => " + sConvertedContent.length + " bytes " + String(Math.round((nLen-nAfterLen) / nLen * 100 * 100)/100 + "%.").red + " gzipped " + String(nGzipLen).green + " bytes.");
 	});
 };
