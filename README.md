@@ -11,13 +11,13 @@ javascript 배포에 필요한 작업을 하는 grunt 플러그인
 
 ## Install
 1. nodejs와 grunt를 설치한다.
-2. 프로젝트에 [grunt.js gruntfile][getting_started]를 이용하여 grunt.js 파일을 생성하고, grunt-jstools를 npm을 통해 설치한다.
+2. 프로젝트에 [Gruntfile.js][http://gruntjs.com/getting-started]를 이용하여 Gruntfile.js 파일을 생성하고, grunt-jstools를 npm을 통해 설치한다. (--save-dev 옵션을 주면 자동으로 package.json파일에 devDependency가 추가된다)
 ```
-npm install grunt-jstools
+npm install grunt-jstools --save-dev
 ```
 3. grunt.js 파일에 다음과 같은 코드를 통해 grunt-jstools를 타스크를 로딩한다.
 
-[getting_started]: https://github.com/gruntjs/grunt/blob/0.3-stable/docs/getting_started.md
+[http://gruntjs.com/getting-started]: https://github.com/gruntjs/grunt/blob/0.3-stable/docs/getting_started.md
 
 
 ## Project configuration
