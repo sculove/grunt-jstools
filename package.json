@@ -1,7 +1,7 @@
 {
   "name": "grunt-jstools",
   "description": "support javascript merge, each compress, all in compress, each beautify, all in beautify, each obfuscation, all in obfuscation, etc...",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/sculove/grunt-jstools",
   "author": {
     "name": "sculove",
@@ -29,7 +29,7 @@
   "scripts": {
     "test": "grunt test"
   },
-  "devDependencies": {
+  "dependencies": {
     "uglify-js" : "*",
     "gzip-js" : "*",
     "grunt": "~0.4.1"
