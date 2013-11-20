@@ -45,8 +45,8 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-jstools');
 ```
 
-- `src` -- 대상이 되는 javascript 파일 패턴
-- `dest` -- 주석제거, 최소화, 코드 암복호화가 적용될 대상. 디렉토리일 경우, `src` 패턴에 해당되는 파일들이 디렉토리에 생성된다. 파일일 경우, `src` 패턴에 해당되는 파일들이 하나로 합쳐진다.
+- `src` -- 대상이 되는 javascript 파일 패턴 (필수값)
+- `dest` -- 주석제거, 최소화, 코드 암복호화가 적용될 대상. 디렉토리일 경우, `src` 패턴에 해당되는 파일들이 디렉토리에 생성된다. 파일일 경우, `src` 패턴에 해당되는 파일들이 하나로 합쳐진다. (필수값)
 - `level` -- 생략할 경우, 코드 난독화가 적용되고, `nocomment`일 경우, 주석만 제거되고, `min`일 경우, 주석이 제거되고, 코드가 최소화된다.
 
 
@@ -111,18 +111,23 @@ grunt.loadNpmTasks('grunt-jstools');
 
 
 ## Release History
-- 2013. 11.20 grunt 4.0 base로 변경
-- 2013. 1. 25 압축률 및 gzip 했을 경우의 변화량을 알려줌.
-- 2013. 1. 24 최초 릴리즈 v1.0.0
-
+- v1.1.0 dest 속성에 해당하는 디렉토리가 있을 경우 오류 수정 (2013. 11. 20)
+- v1.1.0 dest 속성 필수로 변경 (2013. 11. 18)
+- v1.1.0 grunt 4.0 base로 변경 (2013. 11. 18)
+- v1.0.1 압축률 및 gzip 했을 경우의 변화량을 알려줌 (2013. 1. 25)
+- v1.0.0 최초 릴리즈 (2013. 1. 24)
 
 
 ## Refrenece site
 http://gruntjs.com/getting-started
 
+http://gruntjs.com/api/grunt
+
 https://github.com/mishoo/UglifyJS2
 
 http://lisperator.net/uglifyjs/
+
+http://blog.outsider.ne.kr/829
 
 
 ## License

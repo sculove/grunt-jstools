@@ -5,48 +5,13 @@
  * Copyright (c) 2013 sculove
  * Licensed under the MIT license.
  */
-// var util = require("util");
+'use strict';
 module.exports = function(grunt) {
 	var log = grunt.log,
 		fs = grunt.file;
 
-	grunt.registerMultiTask('jstools', 'Log stuff.', function() {
-		var src = this.file.src,
-			dest = this.file.dest,
-			srcFiles = fs.expandFiles(src),
-			destFiles = fs.expandFiles(dest),
-			isOutputDir = false,
-			level = this.data.level;
-		
-		// there is no destfile
-		if(destFiles == "") {
-			// isDirectory? or isFile?
-			if(!/\.[a-zA-Z]{1,}$/.test(dest)) {
-				fs.mkdir(dest);
-				isOutputDir = true;
-			}
-		}
-		if(isOutputDir) {
-			srcFiles.map(function(srcpath) {
-				srcContents = grunt.helper("jstools-uglify", srcpath, level);
-				fs.write(dest + "/" + srcpath, srcContents);
-				grunt.helper("jstools-info", srcpath, srcContents, true);
-			});
-			log.writeln('Directory "' + dest + '"');
-		} else {
-	    	srcContents = grunt.helper("jstools-uglify", srcFiles, level);
-	    	fs.write(dest, srcContents);
-	    	grunt.helper("jstools-info", srcFiles, srcContents, false);
-
-	    	// // Otherwise, print a success message.
-	    	log.writeln('File "' + dest + '" created.');
-		}
-
-    	// Fail task if errors were logged.
-    	if (this.errorCount) { return false; }
-	});
-
-	grunt.registerHelper("jstools-uglify", function(afiles, level) {
+	// Uglify
+	function fpUglify(afiles, level) {
 		var uglifyjs = require('uglify-js');
 		var htOption = {
 			mangle : true,
@@ -84,20 +49,64 @@ module.exports = function(grunt) {
 					break;
 			}
 		return uglifyjs.minify(afiles, htOption).code;
-	});
+	}
 
-	grunt.registerHelper("jstools-info", function(sPath, sConvertedContent, isDirType) {
+	// gzip infomation
+	function fpInfo(sPath, sConvertedContent, isDirType) {
 		var nAfterLen = sConvertedContent.length,
 			nGzipLen = require("gzip-js").zip(sConvertedContent, {}).length,
 			nLen = 0;
 		if(isDirType) {
-			nLen = grunt.task.directive(sPath, grunt.file.read).length;
+			nLen = grunt.file.read(sPath).length;
 		} else {
+			console.log(sPath.length);
 			sPath.forEach(function(value) {
-				nLen += grunt.task.directive(value, grunt.file.read).length;
+				nLen += grunt.file.read(value).length;
 			});
 		}
-		grunt.log.writeln("[" + (isDirType ? sPath : "Information") + "] ");
-		grunt.log.writeln(" " + nLen + " => " + sConvertedContent.length + " bytes " + String(Math.round((nLen-nAfterLen) / nLen * 100 * 100)/100 + "%.").red + " gzipped " + String(nGzipLen).green + " bytes.");
+		log.writeln("[" + (isDirType ? sPath : "Information") + "] ");
+		log.writeln(" " + nLen + " => " + sConvertedContent.length + " bytes " + String(Math.round((nLen-nAfterLen) / nLen * 100 * 100)/100 + "%.").red + " gzipped " + String(nGzipLen).green + " bytes.");
+	}
+
+	grunt.registerMultiTask('jstools', 'Log stuff.', function() {
+		var src = this.data.src,
+			dest = this.data.dest,
+			srcFiles = fs.expand(src),
+			isOutputDir = false,
+			srcContents,
+			level = this.data.level;
+		
+		if(dest) {
+			if(fs.exists(dest)) {
+				isOutputDir = fs.isDir(dest);
+			} else {
+				// not exist dest file or directory
+				// if destfiles is directory, make a directory
+				if(!/\.[a-zA-Z]{1,}$/.test(dest)) {
+					fs.mkdir(dest);
+					isOutputDir = true;
+				}
+			}	
+		} else {
+			log.writeln("You must setting " + String('dest').red + " property!");
+				return;
+		}
+
+		if(isOutputDir) {
+			srcFiles.map(function(srcpath) {
+				srcContents = fpUglify(srcpath, level);
+				fs.write(dest + "/" + srcpath, srcContents);
+				fpInfo(srcpath, srcContents, true);
+			});
+			log.writeln('Directory "' + dest + '"');
+		} else {
+	    	srcContents = fpUglify(srcFiles, level);
+	    	fs.write(dest, srcContents);
+	    	fpInfo(srcFiles, srcContents, false);
+	    	// // Otherwise, print a success message.
+	    	log.writeln('File "' + dest + '" created.');
+		}
+    // Fail task if errors were logged.
+    if (this.errorCount) { return false; }
 	});
 };
