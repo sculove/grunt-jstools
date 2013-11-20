@@ -10,14 +10,15 @@ javascript 배포에 필요한 작업을 하는 grunt 플러그인
 
 
 ## Install
-1. nodejs와 grunt를 설치한다.
-2. 프로젝트에 [Gruntfile.js][http://gruntjs.com/getting-started]를 이용하여 Gruntfile.js 파일을 생성하고, grunt-jstools를 npm을 통해 설치한다. (--save-dev 옵션을 주면 자동으로 package.json파일에 devDependency가 추가된다)
+1. nodejs와 grunt-cli를 설치한다. [grunt-cli설치]
+2. 프로젝트 [가이드][getting-started]에 따라 Gruntfile.js 파일과 package.json 파일을 생성하고, grunt-jstools를 npm을 통해 설치한다. (--save-dev 옵션을 주면 자동으로 package.json파일에 devDependency가 추가된다)
 ```
 npm install grunt-jstools --save-dev
 ```
 3. grunt.js 파일에 다음과 같은 코드를 통해 grunt-jstools를 타스크를 로딩한다.
 
-[http://gruntjs.com/getting-started]: https://github.com/gruntjs/grunt/blob/0.3-stable/docs/getting_started.md
+[grunt-cli설치]: http://gruntjs.com/getting-started#installing-the-cli
+[getting-started]: http://gruntjs.com/getting-started#preparing-a-new-grunt-project
 
 
 ## Project configuration
@@ -109,13 +110,14 @@ grunt.loadNpmTasks('grunt-jstools');
 
 
 ## Release History
+- 2013. 11.20 grunt 4.0 base로 변경
 - 2013. 1. 25 압축률 및 gzip 했을 경우의 변화량을 알려줌.
 - 2013. 1. 24 최초 릴리즈 v1.0.0
 
 
 
 ## Refrenece site
-https://github.com/gruntjs/grunt/blob/0.3-stable/docs/plugins.md
+http://gruntjs.com/getting-started
 
 https://github.com/mishoo/UglifyJS2
 
