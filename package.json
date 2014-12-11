@@ -17,8 +17,8 @@
   },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "https://github.com/sculove/grunt-jstools/blob/master/LICENSE-MIT"
+      "type": "LGPL v2",
+      "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html"
     }
   ],
   "main": "Gruntfile.js",

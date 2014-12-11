@@ -118,19 +118,15 @@ grunt.loadNpmTasks('grunt-jstools');
 - v1.0.1 압축률 및 gzip 했을 경우의 변화량을 알려줌 (2013. 1. 25)
 - v1.0.0 최초 릴리즈 (2013. 1. 24)
 
-
 ## Refrenece site
 http://gruntjs.com/getting-started
-
 http://gruntjs.com/api/grunt
-
 https://github.com/mishoo/UglifyJS2
-
 http://lisperator.net/uglifyjs/
-
 http://blog.outsider.ne.kr/829
 
-
 ## License
-Copyright (c) 2013 sculove  
-Licensed under the MIT license.
+Licensed under LGPL v2:  
+https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+
+[![Analytics](https://ga-beacon.appspot.com/UA-37362821-5/grunt-jstools/readme)](https://github.com/sculove/grunt-jstools)
