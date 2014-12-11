@@ -119,11 +119,11 @@ grunt.loadNpmTasks('grunt-jstools');
 - v1.0.0 최초 릴리즈 (2013. 1. 24)
 
 ## Refrenece site
-http://gruntjs.com/getting-started
-http://gruntjs.com/api/grunt
-https://github.com/mishoo/UglifyJS2
-http://lisperator.net/uglifyjs/
-http://blog.outsider.ne.kr/829
+http://gruntjs.com/getting-started  
+http://gruntjs.com/api/grunt  
+https://github.com/mishoo/UglifyJS2  
+http://lisperator.net/uglifyjs/  
+http://blog.outsider.ne.kr/829  
 
 ## License
 Licensed under LGPL v2:  
