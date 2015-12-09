@@ -130,3 +130,6 @@ Licensed under LGPL v2:
 https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
 
 [![Analytics](https://ga-beacon.appspot.com/UA-37362821-5/grunt-jstools/readme)](https://github.com/sculove/grunt-jstools)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sculove/grunt-jstools/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
