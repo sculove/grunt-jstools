@@ -133,6 +133,6 @@ https://github.com/sculove/grunt-jstools/issues
 
 ## License
 Licensed under MIT:  
-https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html  
+https://opensource.org/licenses/MIT
 
 [![Analytics](https://ga-beacon.appspot.com/UA-37362821-5/grunt-jstools/readme)](https://github.com/sculove/grunt-jstools)
