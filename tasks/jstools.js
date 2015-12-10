@@ -59,7 +59,6 @@ module.exports = function(grunt) {
 		if(isDirType) {
 			nLen = grunt.file.read(sPath).length;
 		} else {
-			console.log(sPath.length);
 			sPath.forEach(function(value) {
 				nLen += grunt.file.read(value).length;
 			});
@@ -68,14 +67,14 @@ module.exports = function(grunt) {
 		log.writeln(" " + nLen + " => " + sConvertedContent.length + " bytes " + String(Math.round((nLen-nAfterLen) / nLen * 100 * 100)/100 + "%.").red + " gzipped " + String(nGzipLen).green + " bytes.");
 	}
 
-	grunt.registerMultiTask('jstools', 'Log stuff.', function() {
+	grunt.registerMultiTask('jstools', function() {
 		var src = this.data.src,
 			dest = this.data.dest,
 			srcFiles = fs.expand(src),
 			isOutputDir = false,
 			srcContents,
 			level = this.data.level;
-		
+
 		if(dest) {
 			if(fs.exists(dest)) {
 				isOutputDir = fs.isDir(dest);
@@ -86,7 +85,7 @@ module.exports = function(grunt) {
 					fs.mkdir(dest);
 					isOutputDir = true;
 				}
-			}	
+			}
 		} else {
 			log.writeln("You must setting " + String('dest').red + " property!");
 				return;
@@ -100,13 +99,13 @@ module.exports = function(grunt) {
 			});
 			log.writeln('Directory "' + dest + '"');
 		} else {
-	    	srcContents = fpUglify(srcFiles, level);
-	    	fs.write(dest, srcContents);
-	    	fpInfo(srcFiles, srcContents, false);
-	    	// // Otherwise, print a success message.
-	    	log.writeln('File "' + dest + '" created.');
+			srcContents = fpUglify(srcFiles, level);
+			fs.write(dest, srcContents);
+			fpInfo(srcFiles, srcContents, false);
+			// // Otherwise, print a success message.
+			log.writeln('File "' + dest + '" created.');
 		}
-    // Fail task if errors were logged.
-    if (this.errorCount) { return false; }
+		// Fail task if errors were logged.
+		if (this.errorCount) { return false; }
 	});
 };
