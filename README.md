@@ -112,22 +112,26 @@ grunt.loadNpmTasks('grunt-jstools');
 
 ## Release History
 - v1.1.2 change License from LGPL v2 to MIT (2015. 12. 10)
-- v1.1.1 의존 라이브러리 추가 (2013. 11. 20)
+- v1.1.1 add dependency library (2013. 11. 20)
 - v1.1.0 dest 속성에 해당하는 디렉토리가 있을 경우 오류 수정 (2013. 11. 20)
 - v1.1.0 dest 속성 필수로 변경 (2013. 11. 17)
 - v1.1.0 grunt 4.0 base로 변경 (2013. 11. 17)
 - v1.0.1 압축률 및 gzip 했을 경우의 변화량을 알려줌 (2013. 1. 25)
-- v1.0.0 최초 릴리즈 (2013. 1. 24)
+- v1.0.0 Release (2013. 1. 24)
 
 ## Refrenece site
-http://gruntjs.com/getting-started  
-http://gruntjs.com/api/grunt  
-https://github.com/mishoo/UglifyJS2  
-http://lisperator.net/uglifyjs/  
-http://blog.outsider.ne.kr/829  
+- http://gruntjs.com/getting-started  
+- http://gruntjs.com/api/grunt  
+- https://github.com/mishoo/UglifyJS2  
+- http://lisperator.net/uglifyjs/  
+- http://blog.outsider.ne.kr/829  
+
+## **Issues**
+If you find a bug, please report us via the GitHub issues page.  
+https://github.com/sculove/grunt-jstools/issues
 
 ## License
-Licensed under LGPL v2:  
-https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+Licensed under MIT:  
+https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html  
 
 [![Analytics](https://ga-beacon.appspot.com/UA-37362821-5/grunt-jstools/readme)](https://github.com/sculove/grunt-jstools)
