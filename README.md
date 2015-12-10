@@ -111,6 +111,7 @@ grunt.loadNpmTasks('grunt-jstools');
 
 
 ## Release History
+- v1.1.3 remove unnecessary files (2015. 12. 10)
 - v1.1.2 change License from LGPL v2 to MIT (2015. 12. 10)
 - v1.1.1 add dependency library (2013. 11. 20)
 - v1.1.0 dest 속성에 해당하는 디렉토리가 있을 경우 오류 수정 (2013. 11. 20)
