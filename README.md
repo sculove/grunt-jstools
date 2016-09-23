@@ -136,3 +136,6 @@ Licensed under MIT:
 https://opensource.org/licenses/MIT
 
 [![Analytics](https://ga-beacon.appspot.com/UA-37362821-5/grunt-jstools/readme)](https://github.com/sculove/grunt-jstools)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sculove/grunt-jstools/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
